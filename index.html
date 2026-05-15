@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arraiá do Milho 🌽</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: #fff7e6;
+      color:#333;
+    }
+
+    header{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+      url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1400');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    header h1{
+      font-size:4rem;
+      margin-bottom:15px;
+      text-shadow:2px 2px 10px black;
+    }
+
+    header p{
+      font-size:1.3rem;
+      max-width:700px;
+    }
+
+    .btn{
+      margin-top:25px;
+      padding:15px 30px;
+      border:none;
+      border-radius:40px;
+      background:#ff9800;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      background:#ff6f00;
+    }
+
+    section{
+      padding:70px 10%;
+    }
+
+    .titulo{
+      text-align:center;
+      margin-bottom:50px;
+      font-size:2.5rem;
+      color:#d35400;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,.15);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card h3{
+      color:#e67e22;
+      margin-bottom:10px;
+    }
+
+    /* REALIDADE AUMENTADA */
+    .ar{
+      background:#ffe0b2;
+      border-radius:25px;
+      text-align:center;
+      padding:40px;
+    }
+
+    .camera-box{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      position:relative;
+    }
+
+    .camera-box img{
+      width:300px;
+      border-radius:20px;
+      border:6px solid #ff9800;
+    }
+
+    .mustache{
+      position:absolute;
+      width:120px;
+      top:145px;
+    }
+
+    /* MILHAS */
+    .milhas{
+      background:#fff3cd;
+      border-radius:25px;
+      text-align:center;
+      padding:50px;
+    }
+
+    .pontos{
+      font-size:3rem;
+      color:#ff6f00;
+      margin:20px 0;
+      font-weight:bold;
+    }
+
+    .chapéu{
+      width:200px;
+      margin-top:25px;
+      display:none;
+    }
+
+    footer{
+      background:#d35400;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:2.7rem;
+      }
+
+      .titulo{
+        font-size:2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>🌽Arraiá do Milho🌽</h1>
+    <p>
+      O melhor arraiá da cidade com comidas típicas, brincadeiras,
+      barracas e tecnologia divertida!
+    </p>
+
+    <button class="btn" onclick="alert('Bem-vindo ao Arraiá 🎉')">
+      Entrar no Arraiá
+    </button>
+  </header>
+
+  <!-- BRINCADEIRAS -->
+  <section>
+    <h2 class="titulo">🎯 Brincadeiras</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200">
+        <div class="card-content">
+          <h3>Pescaria</h3>
+          <p>Pesque brindes e ganhe prêmios especiais no arraiá.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=1200">
+        <div class="card-content">
+          <h3>Correio Elegante</h3>
+          <p>Envie mensagens divertidas para seus amigos.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200">
+        <div class="card-content">
+          <h3>Argola</h3>
+          <p>Acerte as garrafas e ganhe pontos de milho.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BARRACAS -->
+  <section>
+    <h2 class="titulo">🏕️ Barracas</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200">
+        <div class="card-content">
+          <h3>Barraca do Milho</h3>
+          <p>Milho verde, pamonha, curau e muito mais.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200">
+        <div class="card-content">
+          <h3>Barraca de Doces</h3>
+          <p>Pé de moleque, paçoca e maçã do amor.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200">
+        <div class="card-content">
+          <h3>Bebidas</h3>
+          <p>Quentão, chocolate quente e refrigerantes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMIDAS -->
+  <section>
+    <h2 class="titulo">🍿 Comidas Típicas</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604908176997-4315c447b75b?q=80&w=1200">
+        <div class="card-content">
+          <h3>Pamonha</h3>
+          <p>Feita com milho fresco e muito sabor.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200">
+        <div class="card-content">
+          <h3>Canjica</h3>
+          <p>Tradicional receita cremosa de festa junina.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200">
+        <div class="card-content">
+          <h3>Bolo de Fubá</h3>
+          <p>Perfeito para acompanhar um café quentinho.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REALIDADE AUMENTADA -->
+  <!-- SUBSTITUA A PARTE DO FILTRO DE REALIDADE AUMENTADA POR ESTA -->
+
+<section>
+  <h2 class="titulo">🤠 Filtro de Realidade Aumentada</h2>
+
+  <div class="ar">
+
+    <h3>Teste virtualmente o Bigode Caipira</h3>
+
+    <p style="margin-top:15px;">
+      Clique no botão abaixo para ativar o filtro divertido.
+    </p>
+
+    <button class="btn" onclick="ativarBigode()">
+      Ativar Bigode
+    </button>
+
+    <div class="camera-box">
+
+      <!-- FOTO DA PESSOA -->
+      <img
+      id="fotoPessoa"
+      src="COLE_A_IMAGEM_DA_PESSOA_AQUI">
+
+      <!-- BIGODE -->
+      <img
+      id="bigode"
+      class="mustache"
+      src="https://cdn-icons-png.flaticon.com/512/2968/2968179.png">
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- SISTEMA DE MILHAS -->
+  <section>
+    <h2 class="titulo">🌽 Sistema de Milhas</h2>
+
+    <div class="milhas">
+
+      <h3>Ganhe “Grãos de Milho” em cada compra</h3>
+
+      <div class="pontos" id="pontos">
+        0 🌽
+      </div>
+
+      <button class="btn" onclick="ganharMilho()">
+        Fazer Compra
+      </button>
+
+      <button class="btn" onclick="trocarPremio()">
+        Trocar por Chapéu Digital
+      </button>
+
+      <div>
+        <img
+          id="chapeu"
+          class="chapéu"
+          src="https://cdn-icons-png.flaticon.com/512/414/414825.png">
+      </div>
+
+    </div>
+  </section>
+<!-- ADICIONE ESTA PARTE DENTRO DO BODY -->
+
+<!-- PRODUTOS -->
+<section>
+  <h2 class="titulo">🛒 Produtos do Arraiá</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604908176997-4315c447b75b?q=80&w=1200">
+      <div class="card-content">
+        <h3>Pamonha</h3>
+        <p>Deliciosa pamonha caseira.</p>
+
+        <h2 style="color:#ff6f00; margin:15px 0;">
+          R$ 12,00
+        </h2>
+        
+<button class="btn comprar-btn"
+onclick="comprarProduto('Pamonha', 12)">
+  Comprar
+</button>
+        
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200">
+      <div class="card-content">
+        <h3>Canjica</h3>
+        <p>Canjica cremosa tradicional.</p>
+      
+        <h2 style="color:#ff6f00; margin:15px 0;">
+          R$ 15,00
+        </h2>
+        <button class="btn comprar-btn"
+onclick="comprarProduto('Pamonha', 12)">
+  Comprar
+</button>
+
+    
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200">
+      <div class="card-content">
+        <h3>Bolo de Fubá</h3>
+        <p>Bolo fofinho de festa junina.</p>
+   
+        <h2 style="color:#ff6f00; margin:15px 0;">
+          R$ 18,00
+        </h2>
+<button class="btn comprar-btn"
+onclick="comprarProduto('Bola de Fubá', 18)">
+  Comprar
+</button>
+       
+       
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CARRINHO -->
+<section>
+  <h2 class="titulo">🧺 Carrinho</h2>
+
+  <div class="milhas">
+
+    <h3>Itens no Carrinho</h3>
+
+    <div id="listaCarrinho"
+      style="
+      margin-top:25px;
+      text-align:left;
+      max-width:500px;
+      margin-inline:auto;
+      font-size:18px;
+      ">
+    </div>
+
+    <h2 style="margin-top:25px;">
+      Total:
+      <span id="totalCarrinho">
+        R$ 0,00
+      </span>
+    </h2>
+
+    <button class="btn finalizar-btn"
+      onclick="finalizarCompra()">
+      Finalizar Compra
+    </button>
+
+  </div>
+</section>
+
+<!-- ANIMAÇÃO -->
+<div id="animacaoCompra"
+style="
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%) scale(0);
+background:#ff9800;
+color:white;
+padding:30px 50px;
+border-radius:25px;
+font-size:28px;
+font-weight:bold;
+z-index:9999;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+transition:.5s;
+">
+🎉 Compra Realizada!
+</div>
+  <footer>
+    🌽 Arraiá do Milhinho 2026 - Todos os direitos reservados
+  </footer>
+
+  <script>
+    // BIGODE
+    function ativarBigode(){
+      const bigode = document.getElementById("bigode");
+
+      if(bigode.style.display === "none"){
+        bigode.style.display = "block";
+      } else {
+        bigode.style.display = "none";
+      }
+    }
+
+    // SISTEMA DE MILHAS
+    let milho = 0;
+
+    function ganharMilho(){
+      milho += 10;
+
+      document.getElementById("pontos").innerHTML =
+      milho + " 🌽";
+
+      alert("Você ganhou 10 Grãos de Milho!");
+    }
+
+    function trocarPremio(){
+
+      if(milho >= 50){
+        milho -= 50;
+
+        document.getElementById("pontos").innerHTML =
+        milho + " 🌽";
+
+        document.getElementById("chapeu").style.display =
+        "block";
+
+        alert("🎉 Você desbloqueou um Chapéu de Palha Digital!");
+      }
+
+      else{
+        alert("Você precisa de 50 🌽 para trocar.");
+      
+      }
+    }
+  </script>
+
+</body>
+</html>
