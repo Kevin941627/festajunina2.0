@@ -1,0 +1,46 @@
+.comprar-btn{
+  width:100%;
+}
+
+.finalizar-btn{
+  margin-top:30px;
+}
+
+/* ITEM CARRINHO */
+.item-carrinho{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  margin-bottom:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+/* ANIMAÇÃO */
+.animar{
+  transform:translate(-50%, -50%) scale(1) !important;
+}
+.mustache{
+  position:absolute;
+  width:140px;
+  top:170px;
+  left:50%;
+  transform:translateX(-50%);
+  display:none;
+  transition:.4s;
+}
+
+.camera-box{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  position:relative;
+}
+
+.camera-box img{
+  width:300px;
+  border-radius:20px;
+  border:6px solid #ff9800;
+}
